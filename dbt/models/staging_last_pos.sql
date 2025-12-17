@@ -1,7 +1,7 @@
 {{ config(
     materialized='table',
     schema='staging',
-    alias='dim_last_pos',
+    alias='veh_last_pos',
     tags=['staging']
 ) }}
 
@@ -24,4 +24,3 @@ SELECT
     geopos
 FROM ranked
 WHERE rn = 1
-    

@@ -26,4 +26,3 @@ SELECT
     masked_geopos
 FROM ranked
 WHERE rn = 1
-    

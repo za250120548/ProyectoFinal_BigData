@@ -31,4 +31,3 @@ SELECT
     masked_geopos
 FROM
     source_data
-    
