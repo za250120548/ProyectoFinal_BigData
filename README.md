@@ -50,10 +50,13 @@ Otro dato que se ignora la coherencia es el dato de geolocalización pues las co
 
 ## Diseño de la base de datos
 
-La base de datos diseñada consta de 4 tablas, la table 2,3 y 4 se generan en la etapa plata del workflow ELT
+El diseño de la base detos se hizo con draw.io y se puede consultar en 
+\ProyectoFinal_BigData\data\dbc_diagram.drawio
+
+La base de datos diseñada consta de 4 tablas, la table 2,3 y 4 se generan en la etapa plata (staging) del workflow ELT, en la etapa oro se oculta informacion sensible con "*", el argumento detras es que solo los algunos ejecutivos y administradores de la DBC tienen acceso a los datos curdos (bronce) y staggin (Plata) donde toda la información esta disponible VIN, Geo position etc.
 1. Telemetry
 2. Vehicle
-3. VehAvgSpeed
+3. Veh_speeds
 4. LastPos
 
 ### Telemetry
@@ -72,26 +75,28 @@ Esta tabla se genera automaticamente y extrae la posicion mas reciente rportada 
 
 ## Archivos claves
 
-#### work/data/fleet_raw_data.csv
+#### data/fleet_raw_data.csv
 Archivo que contiene los dato sinteticos.
 
-#### work/data/dbc_diagram.drawio
+#### data/dbc_diagram.drawio
 Diseño de tabla y datos de la base de datos.
 
-#### work/airflow-docker/docker-compose.yaml
+#### docker/docker-compose.yaml
 Archivo que configura el cluster de Docker.
 
-#### work/dags/driven_data_pipeline.py
+#### docker/Docker file
+Archivo de docker
+
+#### dags/driven_data_pipeline.py
 Implementacion del DAG consus tareas.
 
-### work/EvidenceProjectoIntegradorFinal.pdf
+### docs/EvidenceProjectoIntegradorFinal.pdf
 Presentacion de powerpoint con las evidencias del proyecto.
+Aqui se podra encontrar la evidencia y el reporte de la practica
 
-#### work/requirements.txt
+#### docker/requirements.txt
 Archivo de bibliotecas necesarias para la creacion de la imagen de docker y el correcto funcionamiento
 
-
-
-
-
-
+## Documentacion y reporte
+Toda la documentacion y reporte de la practica final se encuentra en 
+docs/EvidenceProjectoIntegradorFinal.pdf
